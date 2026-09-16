@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>8 Months — For You</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --paper: #f3efe8;
+      --ink: #191816;
+      --muted: #77736c;
+      --line: #d6d0c5;
+      --accent: #8c5d50;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    /* ==============================
+       INTRO
+    ============================== */
+
+    .intro {
+      position: fixed;
+      inset: 0;
+      background: var(--ink);
+      color: var(--paper);
+      z-index: 9999;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      transition:
+        opacity 1s ease,
+        visibility 1s ease;
+    }
+
+    .intro.hide {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .intro-content {
+      text-align: center;
+    }
+
+    .intro-date {
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      opacity: 0.55;
+      margin-bottom: 18px;
+    }
+
+    .intro h1 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(48px, 10vw, 100px);
+      font-weight: 400;
+      line-height: 0.9;
+    }
+
+    .intro-line {
+      width: 0;
+      height: 1px;
+      background: var(--paper);
+      margin: 28px auto 0;
+      animation: lineGrow 1.8s ease forwards;
+    }
+
+    @keyframes lineGrow {
+      to {
+        width: 80px;
+      }
+    }
+
+    /* ==============================
+       NAV
+    ============================== */
+
+    nav {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+
+      padding: 28px 5vw;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      z-index: 10;
+
+      mix-blend-mode: difference;
+      color: white;
+    }
+
+    .nav-logo {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 23px;
+    }
+
+    .nav-date {
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /* ==============================
+       HERO
+    ============================== */
+
+    .hero {
+      min-height: 100vh;
+
+      padding: 100px 5vw 60px;
+
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+
+      gap: 6vw;
+
+      align-items: center;
+    }
+
+    .hero-copy {
+      padding-left: 3vw;
+    }
+
+    .eyebrow {
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+
+      color: var(--muted);
+
+      margin-bottom: 30px;
+    }
+
+    .hero h1 {
+      font-family: "Cormorant Garamond", serif;
+
+      font-size: clamp(64px, 9vw, 135px);
+
+      line-height: 0.78;
+
+      font-weight: 400;
+
+      letter-spacing: -4px;
+    }
+
+    .hero h1 span {
+      display: block;
+      margin-left: 8vw;
+      font-style: italic;
+    }
+
+    .hero-description {
+      max-width: 350px;
+
+      margin-top: 45px;
+
+      color: var(--muted);
+
+      line-height: 1.8;
+
+      font-size: 13px;
+    }
+
+    .hero-image {
+      height: 75vh;
+
+      position: relative;
+
+      overflow: hidden;
+
+      background: #ddd6cc;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      filter: grayscale(10%);
+
+      transition:
+        transform 1.2s cubic-bezier(.2,.7,.2,1);
+    }
+
+    .hero-image:hover img {
+      transform: scale(1.025);
+    }
+
+    .image-label {
+      position: absolute;
+
+      bottom: 18px;
+      left: 18px;
+
+      color: white;
+
+      font-size: 9px;
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+
+      text-shadow:
+        0 1px 10px rgba(0,0,0,.4);
+    }
+
+    /* ==============================
+       DIVIDER
+    ============================== */
+
+    .divider {
+      width: 90%;
+
+      margin: 0 auto;
+
+      height: 1px;
+
+      background: var(--line);
+    }
+
+    /* ==============================
+       STATEMENT
+    ============================== */
+
+    .statement {
+      min-height: 75vh;
+
+      display: flex;
+      align-items: center;
+
+      padding: 12vw 10vw;
+    }
+
+    .statement p {
+      max-width: 1050px;
+
+      font-family: "Cormorant Garamond", serif;
+
+      font-size: clamp(42px, 6vw, 82px);
+
+      line-height: 1.03;
+
+      letter-spacing: -2px;
+    }
+
+    .statement em {
+      color: var(--accent);
+    }
+
+    /* ==============================
+       TIMELINE
+    ============================== */
+
+    .timeline-section {
+      padding: 10vw 10vw;
+    }
+
+    .section-heading {
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: baseline;
+
+      margin-bottom: 90px;
+    }
+
+    .section-heading h2 {
+      font-family: "Cormorant Garamond", serif;
+
+      font-size: clamp(45px, 6vw, 75px);
+
+      font-weight: 400;
+    }
+
+    .section-number {
+      font-size: 10px;
+
+      letter-spacing: 2px;
+
+      color: var(--muted);
+    }
+
+    .timeline {
+      max-width: 900px;
+
+      margin: auto;
+    }
+
+    .moment {
+      display: grid;
+
+      grid-template-columns: 100px 1fr;
+
+      gap: 40px;
+
+      padding: 55px 0;
+
+      border-top: 1px solid var(--line);
+    }
+
+    .moment:last-child {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .month {
+      font-size: 11px;
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+
+      color: var(--muted);
+
+      padding-top: 7px;
+    }
+
+    .moment h3 {
+      font-family: "Cormorant Garamond", serif;
+
+      font-size: 38px;
+
+      font-weight: 500;
+
+      margin-bottom: 14px;
+    }
+
+    .moment p {
+      max-width: 550px;
+
+      color: var(--muted);
+
+      line-height: 1.8;
+
+      font-size: 13px;
+    }
+
+    /* ==============================
+       PHOTOS
+    ============================== */
+
+    .photos {
+      padding: 10vw 5vw;
+    }
+
+    .photo-intro {
+      text-align: center;
+
+      margin-bottom: 80px;
+    }
+
+    .photo-intro h2 {
+      font-family: "Cormorant Garamond", serif;
+
+      font-size: clamp(50px, 7vw, 90px);
+
+      font-weight: 400;
+    }
+
+    .photo-intro p {
+      color: var(--muted);
+
+      font-size: 12px;
+
+      margin-top: 15px;
+    }
+
+    .photo-grid {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 20px;
+
+      max-width: 1100px;
+
+      margin: auto;
+    }
+
+    .photo {
+      overflow: hidden;
+
+      position: relative;
+
+      background: #ddd6cc;
+    }
+
+    .photo:nth-child(1) {
+      aspect-ratio: 4 / 5;
+    }
+
+    .photo:nth-child(2) {
+      aspect-ratio: 1 / 1;
+
+      margin-top: 100px;
+    }
+
+    .photo:nth-child(3) {
+      aspect-ratio: 1 / 1;
+
+      margin-top: -40px;
+    }
+
+    .photo:nth-child(4) {
+      aspect-ratio: 4 / 5;
+
+      margin-top: 60px;
+    }
+
+    .photo img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      transition:
+        transform 1s cubic-bezier(.2,.7,.2,1);
+    }
+
+    .photo:hover img {
+      transform: scale(1.04);
+    }
+
+    /* ==============================
+       LETTER
+    ============================== */
+
+    .letter-section {
+      padding: 15vw 8vw;
+
+      background: #e9e3d9;
+    }
+
+    .letter {
+      max-width: 800px;
+
+      margin: auto;
+    }
+
+    .letter-small {
+      font-size: 10px;
+
+      letter-spacing: 3px;
+
+      text-transform: uppercase;
+
+      color: var(--muted);
+
+      margin-bottom: 55px;
+    }
+
+    .letter h2 {
+      font-family: "Cormorant Garamond", serif;
+
+      font-size: clamp(55px, 8vw, 100px);
+
+      line-height: 0.9;
+
+      font-weight: 400;
+
+      margin-bottom: 70px;
+    }
+
+    .letter-body {
+      font-family: "Cormorant Garamond", serif;
+
+      font-size: 25px;
+
+      line-height: 1.65;
+    }
+
+    .letter-body p {
+      margin-bottom: 28px;
+    }
+
+    .signature {
+      margin-top: 70px;
+
+      font-family: "Cormorant Garamond", serif;
+
+      font-size: 35px;
+
+      font-style: italic;
+    }
+
+    /* ==============================
+       FINAL
+    ============================== */
+
+    .final {
+      min-height: 100vh;
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: center;
+
+      justify-content: center;
+
+      text-align: center;
+
+      padding: 60px 20px;
+    }
+
+    .final-date {
+      font-size: 10px;
+
+      letter-spacing: 4px;
+
+      color: var(--muted);
+
+      margin-bottom: 35px;
+    }
+
+    .final h2 {
+      font-family: "Cormorant Garamond", serif;
+
+      font-size: clamp(65px, 11vw, 150px);
+
+      font-weight: 400;
+
+      line-height: 0.8;
+
+      letter-spacing: -4px;
+    }
+
+    .final h2 span {
+      display: block;
+
+      font-style: italic;
+
+      margin-left: 80px;
+    }
+
+    .final-heart {
+      margin-top: 80px;
+
+      font-size: 18px;
+
+      opacity: 0.5;
+    }
+
+    .footer {
+      margin-top: 120px;
+
+      font-size: 9px;
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+
+      color: var(--muted);
+    }
+
+    /* ==============================
+       REVEAL ANIMATION
+    ============================== */
+
+    .reveal {
+      opacity: 0;
+
+      transform: translateY(35px);
+
+      transition:
+        opacity 1s ease,
+        transform 1s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+
+      transform: translateY(0);
+    }
+
+    /* ==============================
+       IMAGE ERROR FALLBACK
+    ============================== */
+
+    img {
+      display: block;
+    }
+
+    img:not([src]),
+    img[src=""] {
+      display: none;
+    }
+
+    /* ==============================
+       MOBILE
+    ============================== */
+
+    @media (max-width: 800px) {
+
+      nav {
+        padding: 22px 6vw;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+
+        padding: 100px 6vw 40px;
+      }
+
+      .hero-copy {
+        padding-left: 0;
+      }
+
+      .hero h1 {
+        font-size: clamp(70px, 19vw, 120px);
+      }
+
+      .hero h1 span {
+        margin-left: 18vw;
+      }
+
+      .hero-description {
+        margin-top: 35px;
+      }
+
+      .hero-image {
+        height: 65vh;
+
+        margin-top: 30px;
+      }
+
+      .statement {
+        min-height: 65vh;
+
+        padding: 25vw 7vw;
+      }
+
+      .statement p {
+        font-size: clamp(40px, 11vw, 65px);
+      }
+
+      .timeline-section {
+        padding: 20vw 7vw;
+      }
+
+      .section-heading {
+        margin-bottom: 50px;
+      }
+
+      .moment {
+        grid-template-columns: 65px 1fr;
+
+        gap: 15px;
+
+        padding: 40px 0;
+      }
+
+      .moment h3 {
+        font-size: 32px;
+      }
+
+      .photo-grid {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+      }
+
+      .photo:nth-child(n) {
+        margin-top: 0;
+      }
+
+      .photo:nth-child(1),
+      .photo:nth-child(4) {
+        aspect-ratio: 4 / 5;
+      }
+
+      .photo:nth-child(2),
+      .photo:nth-child(3) {
+        aspect-ratio: 1 / 1;
+      }
+
+      .letter-section {
+        padding: 25vw 8vw;
+      }
+
+      .letter h2 {
+        margin-bottom: 50px;
+      }
+
+      .letter-body {
+        font-size: 22px;
+      }
+
+      .final h2 {
+        font-size: 20vw;
+      }
+
+      .final h2 span {
+        margin-left: 30px;
+      }
+    }
+
+    /* ==============================
+       VERY SMALL PHONES
+    ============================== */
+
+    @media (max-width: 420px) {
+
+      .nav-logo {
+        font-size: 20px;
+      }
+
+      .nav-date {
+        font-size: 8px;
+      }
+
+      .hero {
+        padding-top: 90px;
+      }
+
+      .hero-image {
+        height: 58vh;
+      }
+
+      .moment {
+        grid-template-columns: 55px 1fr;
+      }
+
+      .month {
+        font-size: 9px;
+        letter-spacing: 1px;
+      }
+
+      .moment h3 {
+        font-size: 28px;
+      }
+
+      .moment p {
+        font-size: 12px;
+      }
+
+      .letter-body {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ==============================
+       INTRO
+  ============================== -->
+
+  <div class="intro" id="intro">
+
+    <div class="intro-content">
+
+      <div class="intro-date">
+        17 September 2026
+      </div>
+
+      <h1>
+        For you.
+      </h1>
+
+      <div class="intro-line"></div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ==============================
+       NAV
+  ============================== -->
+
+  <nav>
+
+    <div class="nav-logo">
+      MJ
+    </div>
+
+    <div class="nav-date">
+      08 months
+    </div>
+
+  </nav>
+
+
+  <!-- ==============================
+       MAIN
+  ============================== -->
+
+  <main>
+
+
+    <!-- ============================
+         HERO
+    ============================= -->
+
+    <section class="hero">
+
+      <div class="hero-copy reveal">
+
+        <div class="eyebrow">
+          September 17, 2026
+        </div>
+
+        <h1>
+          Eight
+          <span>months.</span>
+        </h1>
+
+        <p class="hero-description">
+          Eight months of little moments, long conversations,
+          random laughs, and choosing each other again and again.
+        </p>
+
+      </div>
+
+
+      <div class="hero-image reveal">
+
+        <!-- YOUR HERO PHOTO -->
+        <img
+          src="hero.jpeg"
+          alt="A photo of us"
+        >
+
+        <div class="image-label">
+          somewhere between then & now
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- DIVIDER -->
+
+    <div class="divider"></div>
+
+
+    <!-- ============================
+         STATEMENT
+    ============================= -->
+
+    <section class="statement reveal">
+
+      <p>
+  I don't think eight months sounds like a long time
+  until I remember how many <em>memories and arguments HAHAHA</em>
+  we've already made.
+</p>
+
+    </section>
+
+
+    <!-- ============================
+         TIMELINE
+    ============================= -->
+
+    
+
+      <div class="section-heading reveal">
+
+        
+
+
+      <div class="timeline">
+
+
+        <!-- MONTH 01 -->
+
+        <div class="moment reveal">
+
+          <div class="month">
+          </div>
+
+          <div>
+
+            <h3>
+            </h3>
+
+
+
+    <!-- ============================
+         PHOTOS
+    ============================= -->
+
+    <section class="photos">
+
+
+      <div class="photo-intro reveal">
+
+        <div class="eyebrow">
+          A few frames
+        </div>
+
+        <h2>
+          Us, lately.
+        </h2>
+
+        <p>
+          A collection of moments I never want to forget.
+        </p>
+
+      </div>
+
+
+      <div class="photo-grid">
+
+
+        <!-- PHOTO 1 -->
+        <!-- IMPORTANT:
+             photo1.jpg is in the SAME folder as index.html
+        -->
+
+        <div class="photo reveal">
+
+          <img
+            src="photo1.jpg"
+            alt="Memory 1"
+            loading="lazy"
+          >
+
+        </div>
+
+
+        <!-- PHOTO 2 -->
+
+        <div class="photo reveal">
+
+          <img
+            src="photo2.jpg"
+            alt="Memory 2"
+            loading="lazy"
+          >
+
+        </div>
+
+
+        <!-- PHOTO 3 -->
+
+        <div class="photo reveal">
+
+          <img
+            src="photo3.webp"
+            alt="Memory 3"
+            loading="lazy"
+          >
+
+        </div>
+
+
+        <!-- PHOTO 4 -->
+
+        <div class="photo reveal">
+
+          <img
+            src="photo4.jpg"
+            alt="Memory 4"
+            loading="lazy"
+          >
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- ============================
+         LETTER
+    ============================= -->
+
+    <section class="letter-section">
+
+      <div class="letter reveal">
+
+
+        <div class="letter-small">
+          A letter I wanted you to read
+        </div>
+
+
+        <h2>
+          To my favorite person,
+        </h2>
+
+
+        <div class="letter-body">
+
+  <p>
+    Happy 8th monthsary, baby. 🤍
+  </p>
+
+  <p>
+    I just want to say na I love you so much. 
+    Even though na marami-rami na tayong misunderstandings
+    and yun nga, pag-aaway, I mean, it's normal lang naman po.
+  </p>
+
+  <p>
+    And I'm really sorry for what I've done sa relationship natin.
+    8 months na tayo, mahal, and mahal na mahal ko ikaw so much.
+  </p>
+
+  <p>
+    Ang wish ko para sa atin is sana mahalin mo ako
+    HAHAHAHHAA. I love youuu, baby.
+  </p>
+
+  <p>
+    Tulog ka, ginagawa ko 'to e.
+    Mag-rest ka na lang muna po.
+    Magkikita naman tayo bukas, baby.
+  </p>
+
+  <p>
+    And more buko juice to cum AHAHAHAHAH.
+  </p>
+
+  <p>
+    Yun lang.
+    I love you so much. 🤍
+  </p>
+
+  <div class="signature">
+    Love,<br>
+    Your Baby.
+  </div>
+
+</div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ============================
+         FINAL
+    ============================= -->
+
+    <section class="final">
+
+
+      <div class="final-date">
+        17 · 09 · 2026
+      </div>
+
+
+      <h2>
+        Happy
+        <span>8 months.</span>
+      </h2>
+
+
+      <div class="final-heart">
+        ♡
+      </div>
+
+
+      <div class="footer">
+        Made with love, just for you.
+      </div>
+
+
+    </section>
+
+
+  </main>
+
+
+  <!-- ==============================
+       JAVASCRIPT
+  ============================== -->
+
+  <script>
+
+    /* ==========================
+       INTRO
+    ========================== */
+
+    window.addEventListener("load", () => {
+
+      setTimeout(() => {
+
+        const intro =
+          document.getElementById("intro");
+
+        intro.classList.add("hide");
+
+      }, 1800);
+
+    });
+
+
+    /* ==========================
+       SCROLL REVEAL
+    ========================== */
+
+    const revealElements =
+      document.querySelectorAll(".reveal");
+
+
+    const observer =
+      new IntersectionObserver(
+
+        (entries) => {
+
+          entries.forEach((entry) => {
+
+            if (entry.isIntersecting) {
+
+              entry.target.classList.add("visible");
+
+              observer.unobserve(entry.target);
+
+            }
+
+          });
+
+        },
+
+        {
+          threshold: 0.12
+        }
+
+      );
+
+
+    revealElements.forEach((element) => {
+
+      observer.observe(element);
+
+    });
+
+
+  </script>
+
+</body>
+</html>
