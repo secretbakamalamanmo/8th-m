@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>8 Months — For You</title>
 
@@ -15,6 +15,7 @@
   >
 
   <style>
+
     :root {
       --paper: #f3efe8;
       --ink: #191816;
@@ -31,9 +32,13 @@
 
     html {
       scroll-behavior: smooth;
+      width: 100%;
+      overflow-x: hidden;
     }
 
     body {
+      width: 100%;
+      max-width: 100%;
       background: var(--paper);
       color: var(--ink);
       font-family: "DM Sans", sans-serif;
@@ -41,15 +46,23 @@
       overflow-x: hidden;
     }
 
-    /* ==============================
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+
+    /* =====================================
        INTRO
-    ============================== */
+    ===================================== */
 
     .intro {
       position: fixed;
       inset: 0;
+
       background: var(--ink);
       color: var(--paper);
+
       z-index: 9999;
 
       display: flex;
@@ -68,6 +81,7 @@
 
     .intro-content {
       text-align: center;
+      padding: 20px;
     }
 
     .intro-date {
@@ -90,6 +104,7 @@
       height: 1px;
       background: var(--paper);
       margin: 28px auto 0;
+
       animation: lineGrow 1.8s ease forwards;
     }
 
@@ -99,14 +114,16 @@
       }
     }
 
-    /* ==============================
-       NAV
-    ============================== */
+
+    /* =====================================
+       NAVIGATION
+    ===================================== */
 
     nav {
       position: absolute;
       top: 0;
       left: 0;
+
       width: 100%;
 
       padding: 28px 5vw;
@@ -124,25 +141,30 @@
     .nav-logo {
       font-family: "Cormorant Garamond", serif;
       font-size: 23px;
+      white-space: nowrap;
     }
 
     .nav-date {
       font-size: 10px;
       letter-spacing: 2px;
       text-transform: uppercase;
+      white-space: nowrap;
     }
 
-    /* ==============================
+
+    /* =====================================
        HERO
-    ============================== */
+    ===================================== */
 
     .hero {
       min-height: 100vh;
 
+      width: 100%;
+
       padding: 100px 5vw 60px;
 
       display: grid;
-      grid-template-columns: 1fr 1.2fr;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
 
       gap: 6vw;
 
@@ -151,6 +173,7 @@
 
     .hero-copy {
       padding-left: 3vw;
+      min-width: 0;
     }
 
     .eyebrow {
@@ -177,7 +200,9 @@
 
     .hero h1 span {
       display: block;
+
       margin-left: 8vw;
+
       font-style: italic;
     }
 
@@ -194,6 +219,7 @@
     }
 
     .hero-image {
+      width: 100%;
       height: 75vh;
 
       position: relative;
@@ -237,9 +263,10 @@
         0 1px 10px rgba(0,0,0,.4);
     }
 
-    /* ==============================
+
+    /* =====================================
        DIVIDER
-    ============================== */
+    ===================================== */
 
     .divider {
       width: 90%;
@@ -251,11 +278,14 @@
       background: var(--line);
     }
 
-    /* ==============================
+
+    /* =====================================
        STATEMENT
-    ============================== */
+    ===================================== */
 
     .statement {
+      width: 100%;
+
       min-height: 75vh;
 
       display: flex;
@@ -265,6 +295,7 @@
     }
 
     .statement p {
+      width: 100%;
       max-width: 1050px;
 
       font-family: "Cormorant Garamond", serif;
@@ -278,101 +309,17 @@
 
     .statement em {
       color: var(--accent);
+      font-style: italic;
     }
 
-    /* ==============================
-       TIMELINE
-    ============================== */
 
-    .timeline-section {
-      padding: 10vw 10vw;
-    }
-
-    .section-heading {
-      display: flex;
-
-      justify-content: space-between;
-
-      align-items: baseline;
-
-      margin-bottom: 90px;
-    }
-
-    .section-heading h2 {
-      font-family: "Cormorant Garamond", serif;
-
-      font-size: clamp(45px, 6vw, 75px);
-
-      font-weight: 400;
-    }
-
-    .section-number {
-      font-size: 10px;
-
-      letter-spacing: 2px;
-
-      color: var(--muted);
-    }
-
-    .timeline {
-      max-width: 900px;
-
-      margin: auto;
-    }
-
-    .moment {
-      display: grid;
-
-      grid-template-columns: 100px 1fr;
-
-      gap: 40px;
-
-      padding: 55px 0;
-
-      border-top: 1px solid var(--line);
-    }
-
-    .moment:last-child {
-      border-bottom: 1px solid var(--line);
-    }
-
-    .month {
-      font-size: 11px;
-
-      letter-spacing: 2px;
-
-      text-transform: uppercase;
-
-      color: var(--muted);
-
-      padding-top: 7px;
-    }
-
-    .moment h3 {
-      font-family: "Cormorant Garamond", serif;
-
-      font-size: 38px;
-
-      font-weight: 500;
-
-      margin-bottom: 14px;
-    }
-
-    .moment p {
-      max-width: 550px;
-
-      color: var(--muted);
-
-      line-height: 1.8;
-
-      font-size: 13px;
-    }
-
-    /* ==============================
+    /* =====================================
        PHOTOS
-    ============================== */
+    ===================================== */
 
     .photos {
+      width: 100%;
+
       padding: 10vw 5vw;
     }
 
@@ -399,18 +346,23 @@
     }
 
     .photo-grid {
-      display: grid;
-
-      grid-template-columns: 1fr 1fr;
-
-      gap: 20px;
-
+      width: 100%;
       max-width: 1100px;
 
       margin: auto;
+
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+      gap: 20px;
     }
 
     .photo {
+      width: 100%;
+
       overflow: hidden;
 
       position: relative;
@@ -424,19 +376,16 @@
 
     .photo:nth-child(2) {
       aspect-ratio: 1 / 1;
-
       margin-top: 100px;
     }
 
     .photo:nth-child(3) {
       aspect-ratio: 1 / 1;
-
       margin-top: -40px;
     }
 
     .photo:nth-child(4) {
       aspect-ratio: 4 / 5;
-
       margin-top: 60px;
     }
 
@@ -454,17 +403,21 @@
       transform: scale(1.04);
     }
 
-    /* ==============================
+
+    /* =====================================
        LETTER
-    ============================== */
+    ===================================== */
 
     .letter-section {
+      width: 100%;
+
       padding: 15vw 8vw;
 
       background: #e9e3d9;
     }
 
     .letter {
+      width: 100%;
       max-width: 800px;
 
       margin: auto;
@@ -516,11 +469,14 @@
       font-style: italic;
     }
 
-    /* ==============================
+
+    /* =====================================
        FINAL
-    ============================== */
+    ===================================== */
 
     .final {
+      width: 100%;
+
       min-height: 100vh;
 
       display: flex;
@@ -534,6 +490,8 @@
       text-align: center;
 
       padding: 60px 20px;
+
+      overflow: hidden;
     }
 
     .final-date {
@@ -544,9 +502,14 @@
       color: var(--muted);
 
       margin-bottom: 35px;
+
+      white-space: nowrap;
     }
 
     .final h2 {
+      width: 100%;
+      max-width: 100%;
+
       font-family: "Cormorant Garamond", serif;
 
       font-size: clamp(65px, 11vw, 150px);
@@ -556,6 +519,8 @@
       line-height: 0.8;
 
       letter-spacing: -4px;
+
+      text-align: center;
     }
 
     .final h2 span {
@@ -586,9 +551,10 @@
       color: var(--muted);
     }
 
-    /* ==============================
-       REVEAL ANIMATION
-    ============================== */
+
+    /* =====================================
+       REVEAL
+    ===================================== */
 
     .reveal {
       opacity: 0;
@@ -606,94 +572,102 @@
       transform: translateY(0);
     }
 
-    /* ==============================
-       IMAGE ERROR FALLBACK
-    ============================== */
 
-    img {
-      display: block;
-    }
-
-    img:not([src]),
-    img[src=""] {
-      display: none;
-    }
-
-    /* ==============================
-       MOBILE
-    ============================== */
+    /* =====================================
+       ANDROID / MOBILE
+    ===================================== */
 
     @media (max-width: 800px) {
 
       nav {
-        padding: 22px 6vw;
+        padding: 22px 24px;
       }
 
       .hero {
-        grid-template-columns: 1fr;
+        width: 100%;
 
-        padding: 100px 6vw 40px;
+        grid-template-columns:
+          minmax(0, 1fr);
+
+        padding: 90px 24px 45px;
+
+        gap: 45px;
       }
 
       .hero-copy {
         padding-left: 0;
+        min-width: 0;
       }
 
       .hero h1 {
-        font-size: clamp(70px, 19vw, 120px);
+        font-size: clamp(62px, 18vw, 105px);
+
+        letter-spacing: -3px;
       }
 
       .hero h1 span {
-        margin-left: 18vw;
+        margin-left: 12vw;
       }
 
       .hero-description {
-        margin-top: 35px;
+        max-width: 100%;
       }
 
       .hero-image {
-        height: 65vh;
+        width: 100%;
 
-        margin-top: 30px;
+        height: min(65vh, 620px);
       }
 
-      .statement {
-        min-height: 65vh;
 
-        padding: 25vw 7vw;
+      /* STATEMENT */
+
+      .statement {
+        width: 100%;
+
+        min-height: auto;
+
+        padding: 22vh 24px;
       }
 
       .statement p {
-        font-size: clamp(40px, 11vw, 65px);
+        width: 100%;
+        max-width: 100%;
+
+        font-size: clamp(38px, 10.5vw, 62px);
+
+        letter-spacing: -1.5px;
+
+        overflow-wrap: break-word;
       }
 
-      .timeline-section {
-        padding: 20vw 7vw;
-      }
 
-      .section-heading {
-        margin-bottom: 50px;
-      }
+      /* PHOTOS */
 
-      .moment {
-        grid-template-columns: 65px 1fr;
+      .photos {
+        width: 100%;
 
-        gap: 15px;
-
-        padding: 40px 0;
-      }
-
-      .moment h3 {
-        font-size: 32px;
+        padding: 22vw 24px;
       }
 
       .photo-grid {
-        grid-template-columns: 1fr;
+        width: 100%;
+        max-width: 100%;
+
+        grid-template-columns:
+          minmax(0, 1fr);
 
         gap: 15px;
       }
 
-      .photo:nth-child(n) {
+      .photo {
+        width: 100%;
+      }
+
+      .photo:nth-child(1),
+      .photo:nth-child(2),
+      .photo:nth-child(3),
+      .photo:nth-child(4) {
         margin-top: 0;
       }
 
@@ -707,32 +681,97 @@
         aspect-ratio: 1 / 1;
       }
 
+
+      /* LETTER */
+
       .letter-section {
-        padding: 25vw 8vw;
+        width: 100%;
+
+        padding: 22vw 24px;
+      }
+
+      .letter {
+        width: 100%;
+        max-width: 100%;
       }
 
       .letter h2 {
+        font-size: clamp(52px, 14vw, 82px);
+
+        letter-spacing: -2px;
+
         margin-bottom: 50px;
       }
 
       .letter-body {
-        font-size: 22px;
+        font-size: clamp(20px, 5.5vw, 25px);
+      }
+
+
+      /* FINAL */
+
+      .final {
+        width: 100%;
+
+        min-height: 100svh;
+
+        padding: 70px 24px;
+
+        overflow: hidden;
+      }
+
+      .final-date {
+        margin-bottom: 32px;
+
+        font-size: 9px;
+
+        letter-spacing: 3px;
+
+        white-space: nowrap;
       }
 
       .final h2 {
-        font-size: 20vw;
+        width: 100%;
+
+        font-size: clamp(58px, 18vw, 105px);
+
+        line-height: 0.82;
+
+        letter-spacing: -3px;
+
+        white-space: normal;
+
+        overflow-wrap: normal;
+
+        word-break: normal;
+
+        text-align: center;
       }
 
       .final h2 span {
-        margin-left: 30px;
+        margin-left: 0;
       }
+
+      .final-heart {
+        margin-top: 60px;
+      }
+
+      .footer {
+        margin-top: 90px;
+      }
+
     }
 
-    /* ==============================
-       VERY SMALL PHONES
-    ============================== */
+
+    /* =====================================
+       SMALL ANDROID PHONES
+    ===================================== */
 
     @media (max-width: 420px) {
+
+      nav {
+        padding: 20px;
+      }
 
       .nav-logo {
         font-size: 20px;
@@ -740,45 +779,73 @@
 
       .nav-date {
         font-size: 8px;
+        letter-spacing: 1.5px;
       }
+
 
       .hero {
-        padding-top: 90px;
+        padding-left: 20px;
+        padding-right: 20px;
       }
 
-      .hero-image {
-        height: 58vh;
+      .hero h1 {
+        font-size: clamp(58px, 18vw, 78px);
       }
 
-      .moment {
-        grid-template-columns: 55px 1fr;
+
+      .statement {
+        padding-left: 20px;
+        padding-right: 20px;
       }
 
-      .month {
-        font-size: 9px;
-        letter-spacing: 1px;
+      .statement p {
+        font-size: clamp(36px, 10.5vw, 48px);
       }
 
-      .moment h3 {
-        font-size: 28px;
+
+      .photos {
+        padding-left: 20px;
+        padding-right: 20px;
       }
 
-      .moment p {
-        font-size: 12px;
+
+      .letter-section {
+        padding-left: 20px;
+        padding-right: 20px;
       }
 
       .letter-body {
         font-size: 20px;
       }
+
+
+      .final {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .final h2 {
+        font-size: clamp(54px, 18vw, 76px);
+
+        letter-spacing: -2px;
+      }
+
+      .final-date {
+        font-size: 8px;
+      }
+
     }
+
   </style>
 </head>
 
+
 <body>
 
-  <!-- ==============================
+
+  <!-- =====================================
        INTRO
-  ============================== -->
+  ====================================== -->
 
   <div class="intro" id="intro">
 
@@ -799,9 +866,10 @@
   </div>
 
 
-  <!-- ==============================
+
+  <!-- =====================================
        NAV
-  ============================== -->
+  ====================================== -->
 
   <nav>
 
@@ -816,18 +884,20 @@
   </nav>
 
 
-  <!-- ==============================
+
+  <!-- =====================================
        MAIN
-  ============================== -->
+  ====================================== -->
 
   <main>
 
 
-    <!-- ============================
+    <!-- =================================
          HERO
-    ============================= -->
+    ================================== -->
 
     <section class="hero">
+
 
       <div class="hero-copy reveal">
 
@@ -848,9 +918,9 @@
       </div>
 
 
+
       <div class="hero-image reveal">
 
-        <!-- YOUR HERO PHOTO -->
         <img
           src="hero.jpeg"
           alt="A photo of us"
@@ -862,60 +932,39 @@
 
       </div>
 
+
     </section>
 
 
-    <!-- DIVIDER -->
+
+    <!-- =================================
+         DIVIDER
+    ================================== -->
 
     <div class="divider"></div>
 
 
-    <!-- ============================
+
+    <!-- =================================
          STATEMENT
-    ============================= -->
+    ================================== -->
 
     <section class="statement reveal">
 
       <p>
-  I don't think eight months sounds like a long time
-  until I remember how many <em>memories and arguments HAHAHA</em>
-  we've already made.
-</p>
+        I don't think eight months sounds like a long time
+        until I remember how many
+        <em>memories and arguments HAHAHA</em>
+        we've already made.
+      </p>
 
     </section>
 
 
-    <!-- ============================
-         TIMELINE
-    ============================= -->
 
-    
-
-      <div class="section-heading reveal">
-
-        
-
-
-      <div class="timeline">
-
-
-        <!-- MONTH 01 -->
-
-        <div class="moment reveal">
-
-          <div class="month">
-          </div>
-
-          <div>
-
-            <h3>
-            </h3>
-
-
-
-    <!-- ============================
+    <!-- =================================
          PHOTOS
-    ============================= -->
+    ================================== -->
 
     <section class="photos">
 
@@ -937,13 +986,11 @@
       </div>
 
 
+
       <div class="photo-grid">
 
 
         <!-- PHOTO 1 -->
-        <!-- IMPORTANT:
-             photo1.jpg is in the SAME folder as index.html
-        -->
 
         <div class="photo reveal">
 
@@ -954,6 +1001,7 @@
           >
 
         </div>
+
 
 
         <!-- PHOTO 2 -->
@@ -969,6 +1017,7 @@
         </div>
 
 
+
         <!-- PHOTO 3 -->
 
         <div class="photo reveal">
@@ -980,6 +1029,7 @@
           >
 
         </div>
+
 
 
         <!-- PHOTO 4 -->
@@ -1000,11 +1050,13 @@
     </section>
 
 
-    <!-- ============================
+
+    <!-- =================================
          LETTER
-    ============================= -->
+    ================================== -->
 
     <section class="letter-section">
+
 
       <div class="letter reveal">
 
@@ -1015,65 +1067,73 @@
 
 
         <h2>
-          To my favorite person,
+          To my baby,
         </h2>
+
 
 
         <div class="letter-body">
 
-  <p>
-    Happy 8th monthsary, baby. 🤍
-  </p>
 
-  <p>
-    I just want to say na I love you so much. 
-    Even though na marami-rami na tayong misunderstandings
-    and yun nga, pag-aaway, I mean, it's normal lang naman po.
-  </p>
+          <p>
+            Happy 8th monthsary, baby. 🤍
+          </p>
 
-  <p>
-    And I'm really sorry for what I've done sa relationship natin.
-    8 months na tayo, mahal, and mahal na mahal ko ikaw so much.
-  </p>
 
-  <p>
-    Ang wish ko para sa atin is sana mahalin mo ako
-    HAHAHAHHAA. I love youuu, baby.
-  </p>
+          <p>
+            I just want to say na I love you so much.
+            Even though na marami-rami na tayong misunderstandings
+            and yun nga, pag-aaway, I mean, it's normal lang naman po.
+          </p>
 
-  <p>
-    Tulog ka, ginagawa ko 'to e.
-    Mag-rest ka na lang muna po.
-    Magkikita naman tayo bukas, baby.
-  </p>
 
-  <p>
-    And more buko juice to cum AHAHAHAHAH.
-  </p>
+          <p>
+            And I'm really sorry for what I've done sa relationship natin.
+            8 months na tayo, mahal, and mahal na mahal ko ikaw so much.
+          </p>
 
-  <p>
-    Yun lang.
-    I love you so much. 🤍
-  </p>
 
-  <div class="signature">
-    Love,<br>
-    Your Baby.
-  </div>
+          <p>
+            Ang wish ko para sa atin is sana mahalin mo ako
+            HAHAHAHHAA. I love youuu, baby.
+          </p>
 
-</div>
+
+          <p>
+            Tulog ka, ginagawa ko 'to e.
+            Mag-rest ka na lang muna po.
+            Magkikita naman tayo bukas, baby.
+          </p>
+
+
+        
+
+
+          <p>
+            Yun lang.
+            I love you so much. 🤍
+          </p>
+
+
+          <div class="signature">
+            Love,<br>
+            Your Baby.
+          </div>
 
 
         </div>
 
+
       </div>
+
 
     </section>
 
 
-    <!-- ============================
+
+    <!-- =================================
          FINAL
-    ============================= -->
+    ================================== -->
 
     <section class="final">
 
@@ -1105,15 +1165,17 @@
   </main>
 
 
-  <!-- ==============================
+
+  <!-- =====================================
        JAVASCRIPT
-  ============================== -->
+  ====================================== -->
 
   <script>
 
-    /* ==========================
-       INTRO
-    ========================== */
+
+    /* =================================
+       INTRO ANIMATION
+    ================================== */
 
     window.addEventListener("load", () => {
 
@@ -1129,9 +1191,10 @@
     });
 
 
-    /* ==========================
+
+    /* =================================
        SCROLL REVEAL
-    ========================== */
+    ================================== */
 
     const revealElements =
       document.querySelectorAll(".reveal");
@@ -1171,6 +1234,7 @@
 
 
   </script>
+
 
 </body>
 </html>
